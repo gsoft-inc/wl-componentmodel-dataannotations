@@ -1,0 +1,8 @@
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("GSoft.ComponentModel.DataAnnotations.Tests,PublicKey=" +
+    "002400000480000094000000060200000024000052534131000400000100010025a65bdbc70c7c" +
+    "2491ca7ffb4f83d77c9fe93eb216463e832304a9f70d24e9faa54e66dc2294d060dbfad422a849" +
+    "dd855a1f307d2031169958aa358549bf92af6fe6c318034077d1e54465143aa32781bc08c0ac70" +
+    "4e1b23228c42a4dd59c0cd1281434748fca3b50abcdee548f281bc485ed10c06a8a524338a5792" +
+    "58a056b2")]
