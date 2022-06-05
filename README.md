@@ -1,6 +1,6 @@
 # GSoft.ComponentModel.DataAnnotations
 
-Provides more data annotation attributes, such as `[Guid]`, `[NotEmpty]`, `[ValidateProperties]`.
+Provides multiple new data annotation attributes, such as `[Guid]`, `[NotEmpty]`, `[ValidateProperties]`.
 
 [![nuget](https://img.shields.io/nuget/v/GSoft.ComponentModel.DataAnnotations.svg?logo=nuget)](https://www.nuget.org/packages/GSoft.ComponentModel.DataAnnotations/)
 [![build](https://img.shields.io/github/workflow/status/gsoft-inc/gsoft-componentmodel-dataannotations/CI%20build?logo=github)](https://github.com/gsoft-inc/gsoft-componentmodel-dataannotations/actions/workflows/ci.yml)
