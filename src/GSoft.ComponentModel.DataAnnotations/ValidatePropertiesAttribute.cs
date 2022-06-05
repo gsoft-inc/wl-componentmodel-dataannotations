@@ -9,8 +9,13 @@ namespace GSoft.ComponentModel.DataAnnotations;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
 public sealed class ValidatePropertiesAttribute : ValidationAttribute
 {
-    public override bool IsValid(object value)
+    public override bool IsValid(object? value)
     {
+        if (value is null)
+        {
+            return true;
+        }
+
         return this.IsValid(value, new ValidationContext(value)) == ValidationResult.Success;
     }
 

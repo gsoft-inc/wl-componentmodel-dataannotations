@@ -7,9 +7,9 @@ namespace GSoft.ComponentModel.DataAnnotations;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
 public sealed class UrlOfKindAttribute : ValidationAttribute
 {
-    private const string ErrorMessageFormat = "The {{0}} field must be a well-formatted {0} URL";
-    private const string RelativeKind = "relative";
-    private const string AbsoluteKind = "absolute";
+    internal const string ErrorMessageFormat = "The {{0}} field must be a well-formatted {0} URL";
+    internal const string RelativeKind = "relative";
+    internal const string AbsoluteKind = "absolute";
     private const string RelativeOrAbsoluteKind = RelativeKind + " or " + AbsoluteKind;
 
     public UrlOfKindAttribute(UriKind kind)
