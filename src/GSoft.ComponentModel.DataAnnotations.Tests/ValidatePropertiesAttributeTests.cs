@@ -7,6 +7,13 @@ namespace GSoft.ComponentModel.DataAnnotations.Tests;
 public class ValidatePropertiesAttributeTests
 {
     [Fact]
+    public void IsValid_Returns_False_When_Validation_Rules_Are_Violated()
+    {
+        var attribute = new ValidatePropertiesAttribute();
+        Assert.False(attribute.IsValid(new ApplicationOptions()));
+    }
+
+    [Fact]
     public void ValidateObject_Throws_Exception_That_Contain_Each_Violated_Validation_Rule()
     {
         var ex = Assert.Throws<ValidationException>(() =>
