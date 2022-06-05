@@ -37,7 +37,7 @@ public class StartsWithAttributeTests
     [Fact]
     public void IsValid_Works_Case_Insensitive()
     {
-        var attr = new StartsWithAttribute("foo") { IgnoreCase = true };;
+        var attr = new StartsWithAttribute("foo") { IgnoreCase = true };
         Assert.True(attr.IsValid("foobar"));
         Assert.True(attr.IsValid("FOOBAR"));
     }

@@ -37,7 +37,7 @@ public class EndsWithAttributeTests
     [Fact]
     public void IsValid_Works_Case_Insensitive()
     {
-        var attr = new EndsWithAttribute("bar") { IgnoreCase = true };;
+        var attr = new EndsWithAttribute("bar") { IgnoreCase = true };
         Assert.True(attr.IsValid("foobar"));
         Assert.True(attr.IsValid("FOOBAR"));
     }
