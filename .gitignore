@@ -389,3 +389,5 @@ $RECYCLE.BIN/
 # Cake
 build/tools/**
 !build/tools/packages.config
+
+.output/

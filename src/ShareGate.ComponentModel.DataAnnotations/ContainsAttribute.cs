@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GSoft.ComponentModel.DataAnnotations;
+namespace ShareGate.ComponentModel.DataAnnotations;
 
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = true)]
 public sealed class ContainsAttribute : TextBasedValidationAttribute

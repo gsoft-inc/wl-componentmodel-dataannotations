@@ -1,6 +1,6 @@
 using System;
 
-namespace GSoft.ComponentModel.DataAnnotations;
+namespace ShareGate.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Indicates that a property contains sensitive information, such as personally identifiable information (PII),

@@ -1,4 +1,4 @@
-namespace GSoft.ComponentModel.DataAnnotations;
+namespace ShareGate.ComponentModel.DataAnnotations;
 
 public enum SensitivityScope
 {
