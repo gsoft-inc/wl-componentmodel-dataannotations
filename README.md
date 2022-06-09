@@ -1,15 +1,15 @@
-# GSoft.ComponentModel.DataAnnotations
+# ShareGate.ComponentModel.DataAnnotations
 
 Provides multiple new data annotation attributes, such as `[Guid]`, `[NotEmpty]`, `[ValidateProperties]`.
 
-[![nuget](https://img.shields.io/nuget/v/GSoft.ComponentModel.DataAnnotations.svg?logo=nuget)](https://www.nuget.org/packages/GSoft.ComponentModel.DataAnnotations/)
-[![build](https://img.shields.io/github/workflow/status/gsoft-inc/gsoft-componentmodel-dataannotations/CI%20build?logo=github)](https://github.com/gsoft-inc/gsoft-componentmodel-dataannotations/actions/workflows/ci.yml)
+[![nuget](https://img.shields.io/nuget/v/ShareGate.ComponentModel.DataAnnotations.svg?logo=nuget)](https://www.nuget.org/packages/ShareGate.ComponentModel.DataAnnotations/)
+[![build](https://img.shields.io/github/workflow/status/gsoft-inc/sg-componentmodel-dataannotations/CI%20build?logo=github)](https://github.com/gsoft-inc/sg-componentmodel-dataannotations/actions/workflows/ci.yml)
 
 
 ## Getting started
 
 ```
-dotnet add package GSoft.ComponentModel.DataAnnotations
+dotnet add package ShareGate.ComponentModel.DataAnnotations
 ```
 
 Decorate your properties, fields and method parameters with these new data annotation attributes.
@@ -41,4 +41,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-Copyright © 2022, GSoft inc. This code is licensed under the Apache License, Version 2.0. You may obtain a copy of this license at https://github.com/gsoft-inc/gsoft-license/blob/master/LICENSE.
+Copyright © 2022, GSoft inc. This code is licensed under the Apache License, Version 2.0. You may obtain a copy of this license at https://github.com/gsoft-inc/sharegate-license/blob/master/LICENSE.

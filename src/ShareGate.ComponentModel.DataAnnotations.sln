@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSoft.ComponentModel.DataAnnotations", "GSoft.ComponentModel.DataAnnotations\GSoft.ComponentModel.DataAnnotations.csproj", "{FB8215B8-9EE1-4566-BB13-D8C3BB64F64C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareGate.ComponentModel.DataAnnotations", "ShareGate.ComponentModel.DataAnnotations\ShareGate.ComponentModel.DataAnnotations.csproj", "{FB8215B8-9EE1-4566-BB13-D8C3BB64F64C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSoft.ComponentModel.DataAnnotations.Tests", "GSoft.ComponentModel.DataAnnotations.Tests\GSoft.ComponentModel.DataAnnotations.Tests.csproj", "{E226C160-6B01-4B70-AD7C-13AE9390B11E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareGate.ComponentModel.DataAnnotations.Tests", "ShareGate.ComponentModel.DataAnnotations.Tests\ShareGate.ComponentModel.DataAnnotations.Tests.csproj", "{E226C160-6B01-4B70-AD7C-13AE9390B11E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{9B779297-90BB-418A-AA2D-5606C2E93B14}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

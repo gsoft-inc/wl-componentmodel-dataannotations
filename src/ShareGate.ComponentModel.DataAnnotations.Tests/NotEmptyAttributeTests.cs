@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using Xunit;
 
-namespace GSoft.ComponentModel.DataAnnotations.Tests;
+namespace ShareGate.ComponentModel.DataAnnotations.Tests;
 
 public sealed class NotEmptyAttributeTests
 {

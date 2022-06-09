@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Xunit;
 
-namespace GSoft.ComponentModel.DataAnnotations.Tests;
+namespace ShareGate.ComponentModel.DataAnnotations.Tests;
 
 public class UrlOfKindAttributeTests
 {

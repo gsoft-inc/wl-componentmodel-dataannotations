@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace GSoft.ComponentModel.DataAnnotations;
+namespace ShareGate.ComponentModel.DataAnnotations;
 
 internal sealed class PropertiesValidationResult : ValidationResult
 {
