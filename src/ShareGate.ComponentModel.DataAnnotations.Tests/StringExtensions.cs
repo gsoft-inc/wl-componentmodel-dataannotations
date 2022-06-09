@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace GSoft.ComponentModel.DataAnnotations.Tests;
+namespace ShareGate.ComponentModel.DataAnnotations.Tests;
 
 internal static class StringExtensions
 {

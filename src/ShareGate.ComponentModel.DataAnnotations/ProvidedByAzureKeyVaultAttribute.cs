@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GSoft.ComponentModel.DataAnnotations;
+namespace ShareGate.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// This attribute has no effect. Its purpose is to let developers know that a configuration property

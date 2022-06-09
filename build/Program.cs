@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Cake.Common;
+using Cake.Common.Build;
 using Cake.Common.IO;
 using Cake.Common.Tools.DotNet;
 using Cake.Common.Tools.DotNet.Build;
@@ -22,7 +23,7 @@ return new CakeHost()
 public static class Constants
 {
     public const string Release = "Release";
-    public const string ProjectName = "GSoft.ComponentModel.DataAnnotations";
+    public const string ProjectName = "ShareGate.ComponentModel.DataAnnotations";
 
     public static readonly string SourceDirectoryPath = Path.Combine("..", "src");
     public static readonly string OutputDirectoryPath = Path.Combine("..", ".output");
@@ -127,16 +128,14 @@ public sealed class TestTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        foreach (var testProjectFilePath in context.GetFiles(Path.Combine(Constants.SourceDirectoryPath, "*", "*.Tests.csproj")))
+        context.DotNetTest(Constants.SolutionPath, new DotNetTestSettings
         {
-            context.DotNetTest(testProjectFilePath.FullPath, new DotNetTestSettings
-            {
-                Configuration = Constants.Release,
-                Loggers = new[] { "console;verbosity=detailed" },
-                NoBuild = true,
-                NoLogo = true,
-            });
-        }
+            Configuration = Constants.Release,
+            Loggers = new[] { "console;verbosity=detailed", "trx" },
+            ResultsDirectory = Constants.OutputDirectoryPath,
+            NoBuild = true,
+            NoLogo = true,
+        });
     }
 }
 
@@ -144,15 +143,23 @@ public sealed class TestTask : FrostingTask<BuildContext>
 [IsDependentOn(typeof(TestTask))]
 public sealed class PackTask : FrostingTask<BuildContext>
 {
-    public override void Run(BuildContext context) => context.DotNetPack(Constants.MainProjectPath, new DotNetPackSettings
+    public override void Run(BuildContext context)
     {
-        Configuration = Constants.Release,
-        MSBuildSettings = context.MSBuildSettings,
-        OutputDirectory = Constants.OutputDirectoryPath,
-        NoBuild = true,
-        NoRestore = true,
-        NoLogo = true,
-    });
+        context.DotNetPack(Constants.MainProjectPath, new DotNetPackSettings
+        {
+            Configuration = Constants.Release,
+            MSBuildSettings = context.MSBuildSettings,
+            OutputDirectory = Constants.OutputDirectoryPath,
+            NoBuild = true,
+            NoRestore = true,
+            NoLogo = true,
+        });
+
+        if (context.GitHubActions() is { IsRunningOnGitHubActions: true } github)
+        {
+            github.Commands.UploadArtifact(new Cake.Core.IO.DirectoryPath(Constants.OutputDirectoryPath), "packages");
+        }
+    }
 }
 
 [TaskName("Push")]
