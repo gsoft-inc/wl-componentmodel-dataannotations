@@ -140,23 +140,15 @@ public sealed class TestTask : FrostingTask<BuildContext>
 [IsDependentOn(typeof(TestTask))]
 public sealed class PackTask : FrostingTask<BuildContext>
 {
-    public override void Run(BuildContext context)
+    public override void Run(BuildContext context) => context.DotNetPack(Constants.MainProjectPath, new DotNetPackSettings
     {
-        context.DotNetPack(Constants.MainProjectPath, new DotNetPackSettings
-        {
-            Configuration = Constants.Release,
-            MSBuildSettings = context.MSBuildSettings,
-            OutputDirectory = Constants.OutputDirectoryPath,
-            NoBuild = true,
-            NoRestore = true,
-            NoLogo = true,
-        });
-
-        if (context.GitHubActions() is { IsRunningOnGitHubActions: true } github)
-        {
-            github.Commands.UploadArtifact(new Cake.Core.IO.DirectoryPath(Constants.OutputDirectoryPath), "packages");
-        }
-    }
+        Configuration = Constants.Release,
+        MSBuildSettings = context.MSBuildSettings,
+        OutputDirectory = Constants.OutputDirectoryPath,
+        NoBuild = true,
+        NoRestore = true,
+        NoLogo = true,
+    });
 }
 
 [TaskName("Push")]

@@ -25,3 +25,8 @@ jobs:
 
       - run: ./build.ps1
         shell: pwsh
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: ./.output/**/*
