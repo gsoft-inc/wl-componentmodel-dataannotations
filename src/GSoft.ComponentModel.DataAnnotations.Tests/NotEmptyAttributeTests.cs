@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using Xunit;
 
 namespace GSoft.ComponentModel.DataAnnotations.Tests;
 

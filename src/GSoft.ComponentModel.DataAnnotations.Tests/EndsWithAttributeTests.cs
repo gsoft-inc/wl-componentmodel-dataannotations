@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace GSoft.ComponentModel.DataAnnotations.Tests;
 
 public class EndsWithAttributeTests
