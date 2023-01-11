@@ -9,7 +9,7 @@
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-    <Description>Provides informational attributes and additional validation attributes that can be used during model binding.</Description>
+    <Description>Provides additional informational and validation attributes that can be used during model binding.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
