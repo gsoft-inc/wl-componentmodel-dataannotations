@@ -35,10 +35,6 @@ The most useful validation attribute here is probably `ValidatePropertiesAttribu
 | `SensitiveInformationAttribute`     | Indicates that a property contains sensitive information, such as personally identifiable information (PII), or any other information that might result in loss of an advantage or level of security if disclosed to others (_has no effect_) |
 | `NonSensitiveInformationAttribute`  | Indicates that a property does not contain sensitive information (_has no effect_)                                                                                                                                                            |
 
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. If you're interested, definitely check out our Contributing Guide!
-
 
 ## License
 
