@@ -29,6 +29,7 @@ public sealed class TimeSpanAttribute : ValidationAttribute
     public override bool IsValid(object? value) => value switch
     {
         null => true,
+        TimeSpan => true,
         string valueAsString => this.IsValidTimeSpan(valueAsString),
         _ => false,
     };

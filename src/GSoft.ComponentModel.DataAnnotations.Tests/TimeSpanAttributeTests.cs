@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GSoft.ComponentModel.DataAnnotations.Tests;
@@ -105,5 +106,8 @@ public class TimeSpanAttributeTests
 
         [TimeSpan("G")]
         public string Value2 => "23:28:03";
+
+        [TimeSpan]
+        public TimeSpan Value3 => TimeSpan.Zero;
     }
 }
