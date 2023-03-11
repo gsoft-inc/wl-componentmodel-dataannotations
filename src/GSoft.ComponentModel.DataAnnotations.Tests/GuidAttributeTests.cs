@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace GSoft.ComponentModel.DataAnnotations.Tests;
 
@@ -90,25 +92,43 @@ public class GuidAttributeTests
     public void Validator_TryValidateObject_Returns_The_Expected_Error_Messages_When_Validation_Fails()
     {
         var something = new Something();
-        var expectedValue1ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value1));
-        var expectedValue2ErrorMessage = GuidAttribute.ErrorMessageWithFormatFormat.FormatInvariant("D").FormatInvariant(nameof(Something.Value2));
+        var expectedValue1ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(string.Empty).FormatInvariant(nameof(Something.Valid1));
+        var expectedValue2ErrorMessage = GuidAttribute.ErrorMessageWithFormatFormat.FormatInvariant(string.Empty, "D").FormatInvariant(nameof(Something.Value2));
+        var expectedValue3ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(GuidAttribute.ErrorMessageNonEmptyPart).FormatInvariant(nameof(Something.Value3));
+        var expectedValue4ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(GuidAttribute.ErrorMessageNonEmptyPart).FormatInvariant(nameof(Something.Value4));
 
         var results = new List<ValidationResult>();
         var context = new ValidationContext(something, serviceProvider: null, items: null);
         var isValid = Validator.TryValidateObject(something, context, results, validateAllProperties: true);
 
         Assert.False(isValid);
-        Assert.Equal(2, results.Count);
-        Assert.Single(results, x => x.ErrorMessage == expectedValue1ErrorMessage);
-        Assert.Single(results, x => x.ErrorMessage == expectedValue2ErrorMessage);
+        Assert.Equal(4, results.Count);
+
+        var errorMessages = results.Select(x => x.ErrorMessage).ToArray();
+        Assert.Single(errorMessages, expectedValue1ErrorMessage);
+        Assert.Single(errorMessages, expectedValue2ErrorMessage);
+        Assert.Single(errorMessages, expectedValue3ErrorMessage);
+        Assert.Single(errorMessages, expectedValue4ErrorMessage);
     }
 
     private class Something
     {
         [Guid]
-        public string Value1 => "not_a_valid_guid_string";
+        public string Valid1 => "not_a_valid_guid_string";
 
         [Guid("D")]
         public string Value2 => "f4aebf097ac845219b0b918d8139bde0";
+
+        [Guid(allowEmpty: false)]
+        public string Value3 => "00000000-0000-0000-0000-000000000000";
+
+        [Guid(allowEmpty: false)]
+        public Guid Value4 => Guid.Empty;
+
+        [Guid]
+        public Guid Value5 => Guid.NewGuid();
+
+        [Guid]
+        public Guid Value6 => Guid.Empty;
     }
 }

@@ -5,8 +5,9 @@ GSoft.ComponentModel.DataAnnotations.ContainsAttribute.ContainsAttribute(string!
 GSoft.ComponentModel.DataAnnotations.EndsWithAttribute
 GSoft.ComponentModel.DataAnnotations.EndsWithAttribute.EndsWithAttribute(string! text) -> void
 GSoft.ComponentModel.DataAnnotations.GuidAttribute
+GSoft.ComponentModel.DataAnnotations.GuidAttribute.AllowEmpty.get -> bool
 GSoft.ComponentModel.DataAnnotations.GuidAttribute.Format.get -> string?
-GSoft.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute(string? format = null) -> void
+GSoft.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute(string? format = null, bool allowEmpty = true) -> void
 GSoft.ComponentModel.DataAnnotations.NonSensitiveInformationAttribute
 GSoft.ComponentModel.DataAnnotations.NonSensitiveInformationAttribute.NonSensitiveInformationAttribute() -> void
 GSoft.ComponentModel.DataAnnotations.NotEmptyAttribute
