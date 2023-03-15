@@ -8,27 +8,24 @@ namespace GSoft.ComponentModel.DataAnnotations;
 public sealed class GuidAttribute : ValidationAttribute
 {
     internal const string ErrorMessageNonEmptyPart = " non-empty";
-    internal const string ErrorMessageWithoutFormatFormat = "The {{0}} field must be a well-formatted{0} GUID";
-    internal const string ErrorMessageWithFormatFormat = "The {{0}} field must be a well-formatted{0} GUID of format '{1}'";
+    internal const string ErrorMessageWithoutFormatFormat = "The {0} field must be a well-formatted{1} GUID";
+    internal const string ErrorMessageWithFormatFormat = "The {0} field must be a well-formatted{1} GUID of format '{2}'";
 
-    public GuidAttribute(string? format = null, bool allowEmpty = true)
-        : base(() => ErrorMessageFormatAccessor(format, allowEmpty))
+    public GuidAttribute()
+    {
+        this.Format = null;
+        this.AllowEmpty = true;
+    }
+
+    public GuidAttribute(string format)
     {
         this.Format = format;
-        this.AllowEmpty = allowEmpty;
+        this.AllowEmpty = true;
     }
 
     public string? Format { get; }
 
-    public bool AllowEmpty { get; }
-
-    private static string ErrorMessageFormatAccessor(string? format, bool allowEmpty)
-    {
-        var emptiness = allowEmpty ? string.Empty : ErrorMessageNonEmptyPart;
-        return format == null
-            ? string.Format(CultureInfo.InvariantCulture, ErrorMessageWithoutFormatFormat, emptiness)
-            : string.Format(CultureInfo.InvariantCulture, ErrorMessageWithFormatFormat, emptiness, format);
-    }
+    public bool AllowEmpty { get; set; }
 
     public override bool IsValid(object? value) => value switch
     {
@@ -49,5 +46,13 @@ public sealed class GuidAttribute : ValidationAttribute
     private bool IsValidGuid(Guid guid)
     {
         return this.AllowEmpty || guid != Guid.Empty;
+    }
+
+    public override string FormatErrorMessage(string name)
+    {
+        var emptiness = this.AllowEmpty ? string.Empty : ErrorMessageNonEmptyPart;
+        return this.Format == null
+            ? string.Format(CultureInfo.InvariantCulture, ErrorMessageWithoutFormatFormat, name, emptiness)
+            : string.Format(CultureInfo.InvariantCulture, ErrorMessageWithFormatFormat, name, emptiness, this.Format);
     }
 }

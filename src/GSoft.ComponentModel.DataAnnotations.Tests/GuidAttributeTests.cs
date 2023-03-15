@@ -92,10 +92,10 @@ public class GuidAttributeTests
     public void Validator_TryValidateObject_Returns_The_Expected_Error_Messages_When_Validation_Fails()
     {
         var something = new Something();
-        var expectedValue1ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(string.Empty).FormatInvariant(nameof(Something.Valid1));
-        var expectedValue2ErrorMessage = GuidAttribute.ErrorMessageWithFormatFormat.FormatInvariant(string.Empty, "D").FormatInvariant(nameof(Something.Value2));
-        var expectedValue3ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(GuidAttribute.ErrorMessageNonEmptyPart).FormatInvariant(nameof(Something.Value3));
-        var expectedValue4ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(GuidAttribute.ErrorMessageNonEmptyPart).FormatInvariant(nameof(Something.Value4));
+        var expectedValue1ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Valid1), string.Empty);
+        var expectedValue2ErrorMessage = GuidAttribute.ErrorMessageWithFormatFormat.FormatInvariant(nameof(Something.Value2), string.Empty, "D");
+        var expectedValue3ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value3), GuidAttribute.ErrorMessageNonEmptyPart);
+        var expectedValue4ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value4), GuidAttribute.ErrorMessageNonEmptyPart);
 
         var results = new List<ValidationResult>();
         var context = new ValidationContext(something, serviceProvider: null, items: null);
@@ -119,10 +119,10 @@ public class GuidAttributeTests
         [Guid("D")]
         public string Value2 => "f4aebf097ac845219b0b918d8139bde0";
 
-        [Guid(allowEmpty: false)]
+        [Guid(AllowEmpty = false)]
         public string Value3 => "00000000-0000-0000-0000-000000000000";
 
-        [Guid(allowEmpty: false)]
+        [Guid(AllowEmpty = false)]
         public Guid Value4 => Guid.Empty;
 
         [Guid]

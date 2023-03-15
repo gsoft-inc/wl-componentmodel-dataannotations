@@ -6,8 +6,10 @@ GSoft.ComponentModel.DataAnnotations.EndsWithAttribute
 GSoft.ComponentModel.DataAnnotations.EndsWithAttribute.EndsWithAttribute(string! text) -> void
 GSoft.ComponentModel.DataAnnotations.GuidAttribute
 GSoft.ComponentModel.DataAnnotations.GuidAttribute.AllowEmpty.get -> bool
+GSoft.ComponentModel.DataAnnotations.GuidAttribute.AllowEmpty.set -> void
 GSoft.ComponentModel.DataAnnotations.GuidAttribute.Format.get -> string?
-GSoft.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute(string? format = null, bool allowEmpty = true) -> void
+GSoft.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute() -> void
+GSoft.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute(string! format) -> void
 GSoft.ComponentModel.DataAnnotations.NonSensitiveInformationAttribute
 GSoft.ComponentModel.DataAnnotations.NonSensitiveInformationAttribute.NonSensitiveInformationAttribute() -> void
 GSoft.ComponentModel.DataAnnotations.NotEmptyAttribute
@@ -41,6 +43,7 @@ GSoft.ComponentModel.DataAnnotations.UrlOfKindAttribute.Kind.get -> System.UriKi
 GSoft.ComponentModel.DataAnnotations.UrlOfKindAttribute.UrlOfKindAttribute(System.UriKind kind) -> void
 GSoft.ComponentModel.DataAnnotations.ValidatePropertiesAttribute
 GSoft.ComponentModel.DataAnnotations.ValidatePropertiesAttribute.ValidatePropertiesAttribute() -> void
+override GSoft.ComponentModel.DataAnnotations.GuidAttribute.FormatErrorMessage(string! name) -> string!
 override GSoft.ComponentModel.DataAnnotations.GuidAttribute.IsValid(object? value) -> bool
 override GSoft.ComponentModel.DataAnnotations.NotEmptyAttribute.IsValid(object? value) -> bool
 override GSoft.ComponentModel.DataAnnotations.TextBasedValidationAttribute.IsValid(object? value) -> bool
