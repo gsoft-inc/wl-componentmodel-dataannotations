@@ -46,3 +46,11 @@ override GSoft.ComponentModel.DataAnnotations.TextBasedValidationAttribute.IsVal
 override GSoft.ComponentModel.DataAnnotations.TimeSpanAttribute.IsValid(object? value) -> bool
 override GSoft.ComponentModel.DataAnnotations.UrlOfKindAttribute.IsValid(object? value) -> bool
 override GSoft.ComponentModel.DataAnnotations.ValidatePropertiesAttribute.IsValid(object? value) -> bool
+GSoft.ComponentModel.DataAnnotations.MaxValue
+GSoft.ComponentModel.DataAnnotations.MaxValue.MaxValue(double maximum) -> void
+GSoft.ComponentModel.DataAnnotations.MaxValue.MaxValue(int maximum) -> void
+GSoft.ComponentModel.DataAnnotations.MaxValue.MaxValue(long maximum) -> void
+GSoft.ComponentModel.DataAnnotations.MinValue
+GSoft.ComponentModel.DataAnnotations.MinValue.MinValue(double minimum) -> void
+GSoft.ComponentModel.DataAnnotations.MinValue.MinValue(int minimum) -> void
+GSoft.ComponentModel.DataAnnotations.MinValue.MinValue(long minimum) -> void
