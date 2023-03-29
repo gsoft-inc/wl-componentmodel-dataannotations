@@ -64,7 +64,7 @@ public class MaxValueAttributeTests
     [InlineData(49, 50)]
     [InlineData(49.0, long.MaxValue)]
     [InlineData(-51, -50)]
-    public void GivenLongValue_ShouldFailValidation_WhenValueIsMoreThanToMax(long maxValue, long valueBeingValidated)
+    public void GivenLongValue_ShouldFailValidation_WhenValueIsMoreThanMax(long maxValue, long valueBeingValidated)
     {
         var maxValueAttribute = new MaxValue(maxValue);
          
