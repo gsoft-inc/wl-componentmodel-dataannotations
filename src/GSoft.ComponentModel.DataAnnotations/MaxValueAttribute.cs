@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GSoft.ComponentModel.DataAnnotations;
 
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = true)]
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
 public sealed class MaxValueAttribute : RangeAttribute
 {
     public MaxValueAttribute(int maximum) 

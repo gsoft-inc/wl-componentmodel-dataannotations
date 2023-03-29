@@ -18,7 +18,7 @@ public class MinValueAttributeTests
     [InlineData(49, int.MaxValue)]
     [InlineData(-51, -50)]
     [InlineData(int.MinValue, int.MinValue)]
-    public void GivenIntValue_ShouldPassValidation_WhenMoreOrEqualThanMin(int minValue, int valueBeingValidated)
+    public void GivenIntValue_ShouldPassValidation_WhenValueIsMoreThanOrEqualToMin(int minValue, int valueBeingValidated)
     {
         var maxValueAttribute = new MinValueAttribute(minValue);
          
@@ -41,7 +41,7 @@ public class MinValueAttributeTests
     [InlineData(49.0, double.MaxValue)]
     [InlineData(-51.0, -50.0)]
     [InlineData(double.MinValue, double.MinValue)]
-    public void GivenDoubleValue_ShouldPassValidation_WhenMoreOrEqualThanMin(double minValue, double valueBeingValidated)
+    public void GivenDoubleValue_ShouldPassValidation_WhenValueIsMoreThanOrEqualToMin(double minValue, double valueBeingValidated)
     {
         var maxValueAttribute = new MinValueAttribute(minValue);
          
@@ -64,7 +64,7 @@ public class MinValueAttributeTests
     [InlineData(49, long.MaxValue)]
     [InlineData(-51, -50)]
     [InlineData(long.MinValue, long.MinValue)]
-    public void GivenLongValue_ShouldPassValidation_WhenMoreOrEqualThanMin(long minValue, long valueBeingValidated)
+    public void GivenLongValue_ShouldPassValidation_WhenValueIsMoreThanOrEqualToMin(long minValue, long valueBeingValidated)
     {
         var maxValueAttribute = new MinValueAttribute(minValue);
          
