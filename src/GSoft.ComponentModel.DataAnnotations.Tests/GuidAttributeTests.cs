@@ -92,7 +92,7 @@ public class GuidAttributeTests
     public void Validator_TryValidateObject_Returns_The_Expected_Error_Messages_When_Validation_Fails()
     {
         var something = new Something();
-        var expectedValue1ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Valid1), string.Empty);
+        var expectedValue1ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value1), string.Empty);
         var expectedValue2ErrorMessage = GuidAttribute.ErrorMessageWithFormatFormat.FormatInvariant(nameof(Something.Value2), string.Empty, "D");
         var expectedValue3ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value3), GuidAttribute.ErrorMessageNonEmptyPart);
         var expectedValue4ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value4), GuidAttribute.ErrorMessageNonEmptyPart);
@@ -114,7 +114,7 @@ public class GuidAttributeTests
     private class Something
     {
         [Guid]
-        public string Valid1 => "not_a_valid_guid_string";
+        public string Value1 => "not_a_valid_guid_string";
 
         [Guid("D")]
         public string Value2 => "f4aebf097ac845219b0b918d8139bde0";
