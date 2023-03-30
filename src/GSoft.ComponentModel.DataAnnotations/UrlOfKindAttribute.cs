@@ -18,7 +18,6 @@ public sealed class UrlOfKindAttribute : ValidationAttribute
         this.Kind = kind;
     }
 
-    [Url]
     public UriKind Kind { get; }
 
     private static string ErrorMessageFormatAccessor(UriKind kind) => kind switch
