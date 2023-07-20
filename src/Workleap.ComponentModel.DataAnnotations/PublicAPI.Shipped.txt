@@ -1,0 +1,60 @@
+#nullable enable
+abstract Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.IsValid(string! value) -> bool
+Workleap.ComponentModel.DataAnnotations.ContainsAttribute
+Workleap.ComponentModel.DataAnnotations.ContainsAttribute.ContainsAttribute(string! text) -> void
+Workleap.ComponentModel.DataAnnotations.EndsWithAttribute
+Workleap.ComponentModel.DataAnnotations.EndsWithAttribute.EndsWithAttribute(string! text) -> void
+Workleap.ComponentModel.DataAnnotations.GuidAttribute
+Workleap.ComponentModel.DataAnnotations.GuidAttribute.AllowEmpty.get -> bool
+Workleap.ComponentModel.DataAnnotations.GuidAttribute.AllowEmpty.set -> void
+Workleap.ComponentModel.DataAnnotations.GuidAttribute.Format.get -> string?
+Workleap.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute() -> void
+Workleap.ComponentModel.DataAnnotations.GuidAttribute.GuidAttribute(string! format) -> void
+Workleap.ComponentModel.DataAnnotations.NonSensitiveInformationAttribute
+Workleap.ComponentModel.DataAnnotations.NonSensitiveInformationAttribute.NonSensitiveInformationAttribute() -> void
+Workleap.ComponentModel.DataAnnotations.NotEmptyAttribute
+Workleap.ComponentModel.DataAnnotations.NotEmptyAttribute.NotEmptyAttribute() -> void
+Workleap.ComponentModel.DataAnnotations.ProvidedByAzureAppConfigAttribute
+Workleap.ComponentModel.DataAnnotations.ProvidedByAzureAppConfigAttribute.ProvidedByAzureAppConfigAttribute() -> void
+Workleap.ComponentModel.DataAnnotations.ProvidedByAzureKeyVaultAttribute
+Workleap.ComponentModel.DataAnnotations.ProvidedByAzureKeyVaultAttribute.ProvidedByAzureKeyVaultAttribute() -> void
+Workleap.ComponentModel.DataAnnotations.SensitiveInformationAttribute
+Workleap.ComponentModel.DataAnnotations.SensitiveInformationAttribute.Scope.get -> Workleap.ComponentModel.DataAnnotations.SensitivityScope
+Workleap.ComponentModel.DataAnnotations.SensitiveInformationAttribute.SensitiveInformationAttribute(Workleap.ComponentModel.DataAnnotations.SensitivityScope scope) -> void
+Workleap.ComponentModel.DataAnnotations.SensitivityScope
+Workleap.ComponentModel.DataAnnotations.SensitivityScope.Application = 2 -> Workleap.ComponentModel.DataAnnotations.SensitivityScope
+Workleap.ComponentModel.DataAnnotations.SensitivityScope.Tenant = 1 -> Workleap.ComponentModel.DataAnnotations.SensitivityScope
+Workleap.ComponentModel.DataAnnotations.SensitivityScope.User = 0 -> Workleap.ComponentModel.DataAnnotations.SensitivityScope
+Workleap.ComponentModel.DataAnnotations.StartsWithAttribute
+Workleap.ComponentModel.DataAnnotations.StartsWithAttribute.StartsWithAttribute(string! text) -> void
+Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute
+Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.IgnoreCase.get -> bool
+Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.IgnoreCase.set -> void
+Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.StringComparison.get -> System.StringComparison
+Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.Text.get -> string!
+Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.TextBasedValidationAttribute(string! text) -> void
+Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute
+Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute.Format.get -> string?
+Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute.TimeSpanAttribute(string? format = null) -> void
+Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute.UseInvariantCulture.get -> bool
+Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute.UseInvariantCulture.set -> void
+Workleap.ComponentModel.DataAnnotations.UrlOfKindAttribute
+Workleap.ComponentModel.DataAnnotations.UrlOfKindAttribute.Kind.get -> System.UriKind
+Workleap.ComponentModel.DataAnnotations.UrlOfKindAttribute.UrlOfKindAttribute(System.UriKind kind) -> void
+Workleap.ComponentModel.DataAnnotations.ValidatePropertiesAttribute
+Workleap.ComponentModel.DataAnnotations.ValidatePropertiesAttribute.ValidatePropertiesAttribute() -> void
+override Workleap.ComponentModel.DataAnnotations.GuidAttribute.FormatErrorMessage(string! name) -> string!
+override Workleap.ComponentModel.DataAnnotations.GuidAttribute.IsValid(object? value) -> bool
+override Workleap.ComponentModel.DataAnnotations.NotEmptyAttribute.IsValid(object? value) -> bool
+override Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.IsValid(object? value) -> bool
+override Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute.IsValid(object? value) -> bool
+override Workleap.ComponentModel.DataAnnotations.UrlOfKindAttribute.IsValid(object? value) -> bool
+override Workleap.ComponentModel.DataAnnotations.ValidatePropertiesAttribute.IsValid(object? value) -> bool
+Workleap.ComponentModel.DataAnnotations.MaxValueAttribute
+Workleap.ComponentModel.DataAnnotations.MaxValueAttribute.MaxValueAttribute(double maximum) -> void
+Workleap.ComponentModel.DataAnnotations.MaxValueAttribute.MaxValueAttribute(int maximum) -> void
+Workleap.ComponentModel.DataAnnotations.MaxValueAttribute.MaxValueAttribute(long maximum) -> void
+Workleap.ComponentModel.DataAnnotations.MinValueAttribute
+Workleap.ComponentModel.DataAnnotations.MinValueAttribute.MinValueAttribute(double minimum) -> void
+Workleap.ComponentModel.DataAnnotations.MinValueAttribute.MinValueAttribute(int minimum) -> void
+Workleap.ComponentModel.DataAnnotations.MinValueAttribute.MinValueAttribute(long minimum) -> void
