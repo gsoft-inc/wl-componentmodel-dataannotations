@@ -1,15 +1,15 @@
-# GSoft.ComponentModel.DataAnnotations
+# Workleap.ComponentModel.DataAnnotations
 
 Provides multiple new data annotation attributes, such as `[Guid]`, `[NotEmpty]`, `[ValidateProperties]`.
 
-[![nuget](https://img.shields.io/nuget/v/GSoft.ComponentModel.DataAnnotations.svg?logo=nuget)](https://www.nuget.org/packages/GSoft.ComponentModel.DataAnnotations/)
-[![build](https://img.shields.io/github/actions/workflow/status/gsoft-inc/gsoft-componentmodel-dataannotations/publish.yml?logo=github)](https://github.com/gsoft-inc/gsoft-componentmodel-dataannotations/actions/workflows/publish.yml)
+[![nuget](https://img.shields.io/nuget/v/Workleap.ComponentModel.DataAnnotations.svg?logo=nuget)](https://www.nuget.org/packages/Workleap.ComponentModel.DataAnnotations/)
+[![build](https://img.shields.io/github/actions/workflow/status/gsoft-inc/wl-componentmodel-dataannotations/publish.yml?logo=github)](https://github.com/gsoft-inc/wl-componentmodel-dataannotations/actions/workflows/publish.yml)
 
 
 ## Getting started
 
 ```
-dotnet add package GSoft.ComponentModel.DataAnnotations
+dotnet add package Workleap.ComponentModel.DataAnnotations
 ```
 
 Decorate your properties, fields and method parameters with these new data annotation attributes.
@@ -38,4 +38,4 @@ The most useful validation attribute here is probably `ValidatePropertiesAttribu
 
 ## License
 
-Copyright © 2022, GSoft Group Inc. This code is licensed under the Apache License, Version 2.0. You may obtain a copy of this license at https://github.com/gsoft-inc/gsoft-license/blob/master/LICENSE.
+Copyright © 2022, Workleap. This code is licensed under the Apache License, Version 2.0. You may obtain a copy of this license at https://github.com/gsoft-inc/gsoft-license/blob/master/LICENSE.
