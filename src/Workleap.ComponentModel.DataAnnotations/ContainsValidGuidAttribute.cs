@@ -6,7 +6,7 @@ using System.Linq;
 namespace Workleap.ComponentModel.DataAnnotations;
 
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
-public class ContainsValidGuidAttribute : ValidationAttribute
+public sealed class ContainsValidGuidAttribute : ValidationAttribute
 {
     internal const string ErrorMessageFormat = "The field {0} must be an enumerable that contains at least one valid GUID";
 

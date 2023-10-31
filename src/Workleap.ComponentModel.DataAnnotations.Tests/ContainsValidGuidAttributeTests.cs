@@ -78,4 +78,3 @@ public class ContainsValidGuidAttributeTests
         public Guid?[] Values { get; set; } = Array.Empty<Guid?>();
     }
 }
-
