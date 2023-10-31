@@ -6,13 +6,13 @@ using System.Globalization;
 
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class ContainsValidGuidAttributeTests
+public sealed class ContainsNonEmptyGuidAttributeTests
 {
     [Theory]
     [ClassData(typeof(ValidData))]
     public void Given_ValidGuids_When_Validate_Then_Valid(object? inputs)
     {
-        var attr = new ContainsValidGuidAttribute();
+        var attr = new ContainsNonEmptyGuidAttribute();
         Assert.True(attr.IsValid(inputs));
     }
 
@@ -20,7 +20,7 @@ public class ContainsValidGuidAttributeTests
     [ClassData(typeof(InvalidData))]
     public void Given_InvalidGuids_When_Validate_Then_Invalid(object? inputs)
     {
-        var attr = new ContainsValidGuidAttribute();
+        var attr = new ContainsNonEmptyGuidAttribute();
         Assert.False(attr.IsValid(inputs));
     }
 
@@ -28,7 +28,7 @@ public class ContainsValidGuidAttributeTests
     public void Validator_TryValidateObject_Returns_The_Expected_Error_Message_When_Validation_Fails()
     {
         var something = new SomeClass();
-        var expectedErrorMessage = string.Format(CultureInfo.InvariantCulture, ContainsValidGuidAttribute.ErrorMessageFormat, nameof(SomeClass.Values));
+        var expectedErrorMessage = string.Format(CultureInfo.InvariantCulture, ContainsNonEmptyGuidAttribute.ErrorMessageFormat, nameof(SomeClass.Values));
 
         var results = new List<ValidationResult>();
         var context = new ValidationContext(something, serviceProvider: null, items: null);
@@ -40,10 +40,11 @@ public class ContainsValidGuidAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private class ValidData : IEnumerable<object[]>
+    private class ValidData : IEnumerable<object?[]>
     {
-        public IEnumerator<object[]> GetEnumerator()
+        public IEnumerator<object?[]> GetEnumerator()
         {
+            yield return new object?[] { null };
             yield return new object[] { new Guid[] { new("f8daff85-4393-42ae-9ab5-8620ab20c8da") } };
             yield return new object[] { new string[] { "d78b48f9-37b8-47dd-8e47-0325dd3e7899" } };
             yield return new object[] { new Guid[] { default, new("846398d2-416d-4f05-86b0-431e11117abc") } };
@@ -57,9 +58,9 @@ public class ContainsValidGuidAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class InvalidData : IEnumerable<object[]>
+    private class InvalidData : IEnumerable<object?[]>
     {
-        public IEnumerator<object[]> GetEnumerator()
+        public IEnumerator<object?[]> GetEnumerator()
         {
             yield return new object[] { new Guid[] { default } };
             yield return new object[] { new Guid?[] { default } };
@@ -67,6 +68,7 @@ public class ContainsValidGuidAttributeTests
             yield return new object[] { new string?[] { default } };
             yield return new object[] { new Guid[] { Guid.Empty } };
             yield return new object[] { new string[] { "00000000-0000-0000-0000-000000000000" } };
+            yield return new object[] { new int[] { 0 } };
         }
 
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
@@ -74,7 +76,7 @@ public class ContainsValidGuidAttributeTests
 
     private class SomeClass
     {
-        [ContainsValidGuid]
+        [ContainsNonEmptyGuid]
         public Guid?[] Values { get; set; } = Array.Empty<Guid?>();
     }
 }

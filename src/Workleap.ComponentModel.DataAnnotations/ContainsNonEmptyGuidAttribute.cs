@@ -6,17 +6,17 @@ using System.Linq;
 namespace Workleap.ComponentModel.DataAnnotations;
 
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
-public sealed class ContainsValidGuidAttribute : ValidationAttribute
+public sealed class ContainsNonEmptyGuidAttribute : ValidationAttribute
 {
-    internal const string ErrorMessageFormat = "The field {0} must be an enumerable that contains at least one valid GUID";
+    internal const string ErrorMessageFormat = "The field {0} must be an collection that contains at least one non-empty GUID";
 
-    public ContainsValidGuidAttribute() : base(ErrorMessageFormat)
+    public ContainsNonEmptyGuidAttribute() : base(ErrorMessageFormat)
     {
     }
 
     public override bool IsValid(object? value) => value switch
     {
-        null => false,
+        null => true,
         IEnumerable<Guid> enumerable => enumerable.Any(this.IsValidGuid),
         IEnumerable<Guid?> enumerable => enumerable.Any(x => x != null && this.IsValidGuid(x.Value)),
         IEnumerable<string> enumerable => enumerable.Any(this.IsValidGuid),
