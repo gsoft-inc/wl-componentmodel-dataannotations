@@ -6,7 +6,7 @@ using System.Linq;
 namespace Workleap.ComponentModel.DataAnnotations;
 
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
-public class ContainsNonEmptyStringAttribute : ValidationAttribute
+public sealed class ContainsNonEmptyStringAttribute : ValidationAttribute
 {
     internal const string ErrorMessageFormat = "The field {0} must be a collection that contains at least one non-empty String";
     
