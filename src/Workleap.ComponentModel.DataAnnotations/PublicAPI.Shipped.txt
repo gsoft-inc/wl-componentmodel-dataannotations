@@ -4,6 +4,8 @@ Workleap.ComponentModel.DataAnnotations.ContainsAttribute
 Workleap.ComponentModel.DataAnnotations.ContainsAttribute.ContainsAttribute(string! text) -> void
 Workleap.ComponentModel.DataAnnotations.ContainsNonEmptyGuidAttribute
 Workleap.ComponentModel.DataAnnotations.ContainsNonEmptyGuidAttribute.ContainsNonEmptyGuidAttribute() -> void
+Workleap.ComponentModel.DataAnnotations.ContainsNonEmptyStringAttribute
+Workleap.ComponentModel.DataAnnotations.ContainsNonEmptyStringAttribute.ContainsNonEmptyStringAttribute() -> void
 Workleap.ComponentModel.DataAnnotations.EndsWithAttribute
 Workleap.ComponentModel.DataAnnotations.EndsWithAttribute.EndsWithAttribute(string! text) -> void
 Workleap.ComponentModel.DataAnnotations.GuidAttribute
@@ -46,6 +48,7 @@ Workleap.ComponentModel.DataAnnotations.UrlOfKindAttribute.UrlOfKindAttribute(Sy
 Workleap.ComponentModel.DataAnnotations.ValidatePropertiesAttribute
 Workleap.ComponentModel.DataAnnotations.ValidatePropertiesAttribute.ValidatePropertiesAttribute() -> void
 override Workleap.ComponentModel.DataAnnotations.ContainsNonEmptyGuidAttribute.IsValid(object? value) -> bool
+override Workleap.ComponentModel.DataAnnotations.ContainsNonEmptyStringAttribute.IsValid(object? value) -> bool
 override Workleap.ComponentModel.DataAnnotations.GuidAttribute.FormatErrorMessage(string! name) -> string!
 override Workleap.ComponentModel.DataAnnotations.GuidAttribute.IsValid(object? value) -> bool
 override Workleap.ComponentModel.DataAnnotations.NotEmptyAttribute.IsValid(object? value) -> bool
