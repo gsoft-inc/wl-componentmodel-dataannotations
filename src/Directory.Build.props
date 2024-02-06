@@ -9,6 +9,7 @@
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
+    <AnalysisLevel>latest-All</AnalysisLevel>
     <Description>Provides additional informational and validation attributes that can be used during model binding.</Description>
   </PropertyGroup>
 
