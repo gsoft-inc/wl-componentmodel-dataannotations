@@ -7,6 +7,8 @@ namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
 public class GuidAttributeTests
 {
+    private const string ACustomErrorMessage = "A custom error message.";
+
     private static readonly IEnumerable<string> ValidGuidFormats = new HashSet<string>
     {
         "N", "D", "B", "P", "X",
@@ -96,19 +98,21 @@ public class GuidAttributeTests
         var expectedValue2ErrorMessage = GuidAttribute.ErrorMessageWithFormatFormat.FormatInvariant(nameof(Something.Value2), string.Empty, "D");
         var expectedValue3ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value3), GuidAttribute.ErrorMessageNonEmptyPart);
         var expectedValue4ErrorMessage = GuidAttribute.ErrorMessageWithoutFormatFormat.FormatInvariant(nameof(Something.Value4), GuidAttribute.ErrorMessageNonEmptyPart);
+        var expectedValue5ErrorMessage = ACustomErrorMessage;
 
         var results = new List<ValidationResult>();
         var context = new ValidationContext(something, serviceProvider: null, items: null);
         var isValid = Validator.TryValidateObject(something, context, results, validateAllProperties: true);
 
         Assert.False(isValid);
-        Assert.Equal(4, results.Count);
+        Assert.Equal(5, results.Count);
 
         var errorMessages = results.Select(x => x.ErrorMessage).ToArray();
         Assert.Single(errorMessages, expectedValue1ErrorMessage);
         Assert.Single(errorMessages, expectedValue2ErrorMessage);
         Assert.Single(errorMessages, expectedValue3ErrorMessage);
         Assert.Single(errorMessages, expectedValue4ErrorMessage);
+        Assert.Single(errorMessages, expectedValue5ErrorMessage);
     }
 
     private class Something
@@ -125,10 +129,13 @@ public class GuidAttributeTests
         [Guid(AllowEmpty = false)]
         public Guid Value4 => Guid.Empty;
 
-        [Guid]
-        public Guid Value5 => Guid.NewGuid();
+        [Guid(ErrorMessage = ACustomErrorMessage)]
+        public string Value5 => "not_a_valid_guid_string";
 
         [Guid]
-        public Guid Value6 => Guid.Empty;
+        public Guid Value6 => Guid.NewGuid();
+
+        [Guid]
+        public Guid Value7 => Guid.Empty;
     }
 }

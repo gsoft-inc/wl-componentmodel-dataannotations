@@ -50,6 +50,11 @@ public sealed class GuidAttribute : ValidationAttribute
 
     public override string FormatErrorMessage(string name)
     {
+        if (this.ErrorMessage != null)
+        {
+            return this.ErrorMessage;
+        }
+
         var emptiness = this.AllowEmpty ? string.Empty : ErrorMessageNonEmptyPart;
         return this.Format == null
             ? string.Format(CultureInfo.InvariantCulture, ErrorMessageWithoutFormatFormat, name, emptiness)
