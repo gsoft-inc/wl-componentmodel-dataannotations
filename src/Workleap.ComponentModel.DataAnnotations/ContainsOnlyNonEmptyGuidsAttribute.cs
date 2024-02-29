@@ -8,7 +8,7 @@ namespace Workleap.ComponentModel.DataAnnotations;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
 public sealed class ContainsOnlyNonEmptyGuidsAttribute : ValidationAttribute
 {
-    internal const string ErrorMessageFormat = "The field {0} must be an collection that contains only non-empty GUIDs";
+    internal const string ErrorMessageFormat = "The field {0} must be a collection that contains only non-empty GUIDs";
 
     public ContainsOnlyNonEmptyGuidsAttribute() : base(ErrorMessageFormat)
     {
