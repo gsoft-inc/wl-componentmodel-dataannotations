@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
@@ -37,9 +37,8 @@ public sealed class GuidAttribute : ValidationAttribute
 
     private bool IsValidGuid(string valueAsString)
     {
-        Guid guid;
         return this.Format is null
-            ? Guid.TryParse(valueAsString, out guid) && this.IsValidGuid(guid)
+            ? Guid.TryParse(valueAsString, out Guid guid) && this.IsValidGuid(guid)
             : Guid.TryParseExact(valueAsString, this.Format, out guid) && this.IsValidGuid(guid);
     }
 

@@ -1,1 +1,7 @@
 #nullable enable
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyGuidsAttribute
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyGuidsAttribute.ContainsOnlyNonEmptyGuidsAttribute() -> void
+override Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyGuidsAttribute.IsValid(object? value) -> bool
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyStringsAttribute
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyStringsAttribute.ContainsOnlyNonEmptyStringsAttribute() -> void
+override Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyStringsAttribute.IsValid(object? value) -> bool
