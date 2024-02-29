@@ -64,3 +64,9 @@ Workleap.ComponentModel.DataAnnotations.MinValueAttribute
 Workleap.ComponentModel.DataAnnotations.MinValueAttribute.MinValueAttribute(double minimum) -> void
 Workleap.ComponentModel.DataAnnotations.MinValueAttribute.MinValueAttribute(int minimum) -> void
 Workleap.ComponentModel.DataAnnotations.MinValueAttribute.MinValueAttribute(long minimum) -> void
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyGuidsAttribute
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyGuidsAttribute.ContainsOnlyNonEmptyGuidsAttribute() -> void
+override Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyGuidsAttribute.IsValid(object? value) -> bool
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyStringsAttribute
+Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyStringsAttribute.ContainsOnlyNonEmptyStringsAttribute() -> void
+override Workleap.ComponentModel.DataAnnotations.ContainsOnlyNonEmptyStringsAttribute.IsValid(object? value) -> bool
