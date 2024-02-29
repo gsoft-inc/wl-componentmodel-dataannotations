@@ -17,7 +17,7 @@ public sealed class ContainsOnlyNonEmptyStringsAttribute : ValidationAttribute
     public override bool IsValid(object? value) => value switch
     {
         null => true,
-        IEnumerable<string> enumerable => enumerable.All(x => !string.IsNullOrWhiteSpace(x)),
+        IEnumerable<string?> enumerable => enumerable.All(x => !string.IsNullOrWhiteSpace(x)),
         _ => false,
     };
 }

@@ -19,11 +19,11 @@ public sealed class ContainsOnlyNonEmptyGuidsAttribute : ValidationAttribute
         null => true,
         IEnumerable<Guid> enumerable => enumerable.All(this.IsValidGuid),
         IEnumerable<Guid?> enumerable => enumerable.All(x => x != null && this.IsValidGuid(x.Value)),
-        IEnumerable<string> enumerable => enumerable.All(this.IsValidGuid),
+        IEnumerable<string?> enumerable => enumerable.All(this.IsValidGuid),
         _ => false,
     };
 
-    private bool IsValidGuid(string valueAsString)
+    private bool IsValidGuid(string? valueAsString)
     {
         return Guid.TryParse(valueAsString, out var guid) && this.IsValidGuid(guid);
     }
