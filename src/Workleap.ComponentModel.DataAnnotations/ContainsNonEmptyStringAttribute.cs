@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Workleap.ComponentModel.DataAnnotations;
 
+// N'importe quoi
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
 public sealed class ContainsNonEmptyStringAttribute : ValidationAttribute
 {
