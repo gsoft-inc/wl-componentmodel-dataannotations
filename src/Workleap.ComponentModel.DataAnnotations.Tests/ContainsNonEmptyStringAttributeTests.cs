@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -9,7 +8,7 @@ namespace Workleap.ComponentModel.DataAnnotations.Tests;
 public sealed class ContainsNonEmptyStringAttributeTests
 {
     [Theory]
-    [ClassData(typeof(ValidData))]
+    [MemberData(nameof(ValidData))]
     public void Given_ValidStrings_When_Validate_Then_Valid(object? inputs)
     {
         var attr = new ContainsNonEmptyStringAttribute();
@@ -17,7 +16,7 @@ public sealed class ContainsNonEmptyStringAttributeTests
     }
 
     [Theory]
-    [ClassData(typeof(InvalidData))]
+    [MemberData(nameof(InvalidData))]
     public void Given_InvalidGuids_When_Validate_Then_Invalid(object? inputs)
     {
         var attr = new ContainsNonEmptyStringAttribute();
@@ -41,32 +40,29 @@ public sealed class ContainsNonEmptyStringAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private sealed class ValidData : IEnumerable<object?[]>
-    {
-        public IEnumerator<object?[]> GetEnumerator()
-        {
-            yield return new object?[] { null };
-            yield return new object[] { new string[] { "Lorem ipsum dolor sit amet" } };
-            yield return new object[] { new string[] { "Lorem ipsum dolor sit amet", "Etiam porta velit non nisi feugiat pulvinar" } };
-            yield return new object[] { new string[] { string.Empty, "Lorem ipsum dolor sit amet" } };
-            yield return new object[] { new string?[] { default, "Lorem ipsum dolor sit amet" } };
-            yield return new object[] { new string[] { "Lorem ipsum dolor sit amet", " " } };
-        }
 
-        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+    public static TheoryData<string?[]?> ValidData()
+    {
+        return new TheoryData<string?[]?>
+        {
+            null,
+            new string[] { "Lorem ipsum dolor sit amet" },
+            new string[] { "Lorem ipsum dolor sit amet", "Etiam porta velit non nisi feugiat pulvinar" },
+            new string[] { string.Empty, "Lorem ipsum dolor sit amet" },
+            new string?[] { default, "Lorem ipsum dolor sit amet" },
+            new string[] { "Lorem ipsum dolor sit amet", " " },
+        };
     }
 
-    private sealed class InvalidData : IEnumerable<object?[]>
+    public static TheoryData<string?[]?> InvalidData()
     {
-        public IEnumerator<object?[]> GetEnumerator()
+        return new TheoryData<string?[]?>
         {
-            yield return new object[] { new string?[] { string.Empty, default } };
-            yield return new object[] { new string?[] { string.Empty } };
-            yield return new object[] { new string?[] { default } };
-            yield return new object[] { new string[] { " " } };
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+            new string?[] { string.Empty, default },
+            new string?[] { string.Empty },
+            new string?[] { default },
+            new string[] { " " },
+        };
     }
 
     private sealed class SomeClass
