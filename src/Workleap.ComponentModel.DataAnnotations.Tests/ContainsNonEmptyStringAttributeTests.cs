@@ -40,7 +40,6 @@ public sealed class ContainsNonEmptyStringAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-
     public static TheoryData<string?[]?> ValidData()
     {
         return new TheoryData<string?[]?>
