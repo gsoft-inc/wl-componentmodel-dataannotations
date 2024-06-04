@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class ValidatePropertiesAttributeTests
+public sealed class ValidatePropertiesAttributeTests
 {
     [Fact]
     public void IsValid_Returns_False_When_Value_Is_Null()
@@ -40,7 +40,7 @@ public class ValidatePropertiesAttributeTests
         Assert.Contains("Authentication.Microsoft.Azure.ClientSecret", ex.Message);
     }
 
-    private class ApplicationOptions
+    private sealed class ApplicationOptions
     {
         [Required]
         [ValidateProperties]
@@ -50,7 +50,7 @@ public class ValidatePropertiesAttributeTests
         public int Count { get; set; } = 0;
     }
 
-    private class AuthenticationOptions
+    private sealed class AuthenticationOptions
     {
         [Required]
         [NotEmpty]
@@ -61,14 +61,14 @@ public class ValidatePropertiesAttributeTests
         public MicrosoftOptions Microsoft { get; set; } = new MicrosoftOptions();
     }
 
-    private class MicrosoftOptions
+    private sealed class MicrosoftOptions
     {
         [Required]
         [ValidateProperties]
         public AzureOptions Azure { get; set; } = new AzureOptions();
     }
 
-    private class AzureOptions
+    private sealed class AzureOptions
     {
         [Required]
         public string ClientId { get; set; } = string.Empty;

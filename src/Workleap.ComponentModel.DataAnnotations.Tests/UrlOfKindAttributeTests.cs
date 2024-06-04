@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class UrlOfKindAttributeTests
+public sealed class UrlOfKindAttributeTests
 {
     [Theory]
     [InlineData(UriKind.Absolute)]
@@ -67,7 +67,7 @@ public class UrlOfKindAttributeTests
         Assert.Single(results, x => x.ErrorMessage == expectedValue3ErrorMessage);
     }
 
-    private class Something
+    private sealed class Something
     {
         [UrlOfKind(UriKind.RelativeOrAbsolute)]
         public string Value1 => ":@ctu@lly_w0rks:#||https://foo";

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class TimeSpanAttributeTests
+public sealed class TimeSpanAttributeTests
 {
     [Fact]
     public void IsValid_Returns_True_When_Value_Is_Null()
@@ -22,7 +22,6 @@ public class TimeSpanAttributeTests
     [InlineData("-0:23:28:03.1195580")]
     public void IsValid_Returns_True_When_Valid_TimeSpan_String_Without_Format(string value)
     {
-        var format = default(string);
         var attr = new TimeSpanAttribute();
         Assert.Null(attr.Format);
         Assert.True(attr.IsValid(value));
@@ -99,7 +98,7 @@ public class TimeSpanAttributeTests
         Assert.Single(results, x => x.ErrorMessage == expectedValue2ErrorMessage);
     }
 
-    private class Something
+    private sealed class Something
     {
         [TimeSpan]
         public string Value1 => "not_a_valid_timespan_string";

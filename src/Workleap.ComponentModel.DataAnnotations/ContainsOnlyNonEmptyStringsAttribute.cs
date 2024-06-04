@@ -9,7 +9,7 @@ namespace Workleap.ComponentModel.DataAnnotations;
 public sealed class ContainsOnlyNonEmptyStringsAttribute : ValidationAttribute
 {
     internal const string ErrorMessageFormat = "The field {0} must be a collection that contains only non-empty Strings";
-    
+
     public ContainsOnlyNonEmptyStringsAttribute() : base(ErrorMessageFormat)
     {
     }
