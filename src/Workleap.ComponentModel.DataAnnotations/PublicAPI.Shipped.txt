@@ -56,6 +56,10 @@ override Workleap.ComponentModel.DataAnnotations.TextBasedValidationAttribute.Is
 override Workleap.ComponentModel.DataAnnotations.TimeSpanAttribute.IsValid(object? value) -> bool
 override Workleap.ComponentModel.DataAnnotations.UrlOfKindAttribute.IsValid(object? value) -> bool
 override Workleap.ComponentModel.DataAnnotations.ValidatePropertiesAttribute.IsValid(object? value) -> bool
+Workleap.ComponentModel.DataAnnotations.MaxTimeSpanValueAttribute
+Workleap.ComponentModel.DataAnnotations.MaxTimeSpanValueAttribute.MaxTimeSpanValueAttribute(string! maximum) -> void
+Workleap.ComponentModel.DataAnnotations.MinTimeSpanValueAttribute
+Workleap.ComponentModel.DataAnnotations.MinTimeSpanValueAttribute.MinTimeSpanValueAttribute(string! minimum) -> void
 Workleap.ComponentModel.DataAnnotations.MaxValueAttribute
 Workleap.ComponentModel.DataAnnotations.MaxValueAttribute.MaxValueAttribute(double maximum) -> void
 Workleap.ComponentModel.DataAnnotations.MaxValueAttribute.MaxValueAttribute(int maximum) -> void
