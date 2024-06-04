@@ -41,7 +41,7 @@ public sealed class ContainsNonEmptyStringAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private class ValidData : IEnumerable<object?[]>
+    private sealed class ValidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
@@ -56,7 +56,7 @@ public sealed class ContainsNonEmptyStringAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class InvalidData : IEnumerable<object?[]>
+    private sealed class InvalidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
@@ -69,7 +69,7 @@ public sealed class ContainsNonEmptyStringAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class SomeClass
+    private sealed class SomeClass
     {
         [ContainsNonEmptyString]
         public string?[] Values { get; set; } = Array.Empty<string?>();

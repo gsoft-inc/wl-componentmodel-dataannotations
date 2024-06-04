@@ -40,15 +40,15 @@ public sealed class ContainsOnlyNonEmptyGuidsAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private class ValidData : IEnumerable<object?[]>
+    private sealed class ValidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
             yield return new object?[] { null };
-            yield return new object[] { new Guid[] { } };
-            yield return new object[] { new Guid?[] { } };
-            yield return new object[] { new string[] { } };
-            yield return new object[] { new string?[] { } };
+            yield return new object[] { Array.Empty<Guid>() };
+            yield return new object[] { Array.Empty<Guid?>() };
+            yield return new object[] { Array.Empty<string>() };
+            yield return new object[] { Array.Empty<string?>() };
             yield return new object[] { new Guid[] { new("f8daff85-4393-42ae-9ab5-8620ab20c8da") } };
             yield return new object[] { new string[] { "d78b48f9-37b8-47dd-8e47-0325dd3e7899" } };
         }
@@ -56,7 +56,7 @@ public sealed class ContainsOnlyNonEmptyGuidsAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class InvalidData : IEnumerable<object?[]>
+    private sealed class InvalidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
@@ -78,7 +78,7 @@ public sealed class ContainsOnlyNonEmptyGuidsAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class SomeClass
+    private sealed class SomeClass
     {
         [ContainsOnlyNonEmptyGuids]
         public Guid[] Values { get; set; } = new[] { Guid.Empty };

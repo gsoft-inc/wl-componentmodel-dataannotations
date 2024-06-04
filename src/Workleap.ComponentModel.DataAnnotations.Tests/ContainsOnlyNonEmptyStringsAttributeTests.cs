@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -40,13 +41,13 @@ public sealed class ContainsOnlyNonEmptyStringsAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private class ValidData : IEnumerable<object?[]>
+    private sealed class ValidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
             yield return new object?[] { null };
-            yield return new object[] { new string?[] { } };
-            yield return new object[] { new string[] { } };
+            yield return new object[] { Array.Empty<string?>() };
+            yield return new object[] { Array.Empty<string>() };
             yield return new object[] { new string[] { "Lorem ipsum dolor sit amet" } };
             yield return new object[] { new string[] { "Lorem ipsum dolor sit amet", "Etiam porta velit non nisi feugiat pulvinar" } };
         }
@@ -54,7 +55,7 @@ public sealed class ContainsOnlyNonEmptyStringsAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class InvalidData : IEnumerable<object?[]>
+    private sealed class InvalidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
@@ -70,7 +71,7 @@ public sealed class ContainsOnlyNonEmptyStringsAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class SomeClass
+    private sealed class SomeClass
     {
         [ContainsOnlyNonEmptyStrings]
         public string?[] Values { get; set; } = new[] { string.Empty };

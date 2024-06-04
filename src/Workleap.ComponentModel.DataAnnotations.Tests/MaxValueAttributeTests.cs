@@ -1,6 +1,6 @@
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class MaxValueAttributeTests
+public sealed class MaxValueAttributeTests
 {
     [Theory]
     [InlineData(50, 49)]
@@ -10,10 +10,10 @@ public class MaxValueAttributeTests
     public void GivenIntValue_ShouldPassValidation_WhenValueIsLessThanOrEqualToMax(int maxValue, int valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.True(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(49, 50)]
     [InlineData(49, int.MaxValue)]
@@ -21,10 +21,10 @@ public class MaxValueAttributeTests
     public void GivenIntValue_ShouldFailValidation_WhenValueIsMoreThanMax(int maxValue, int valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.False(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(50.0, 49.0)]
     [InlineData(double.MaxValue, 49.0)]
@@ -33,10 +33,10 @@ public class MaxValueAttributeTests
     public void GivenDoubleValue_ShouldPassValidation_WhenValueIsLessThanOrEqualToMax(double maxValue, double valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.True(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(49.0, 50.0)]
     [InlineData(49.0, double.MaxValue)]
@@ -44,10 +44,10 @@ public class MaxValueAttributeTests
     public void GivenDoubleValue_ShouldFailValidation_WhenValueIsMoreThanToMax(double maxValue, double valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.False(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(50.0, 49.0)]
     [InlineData(long.MaxValue, 49.0)]
@@ -56,10 +56,10 @@ public class MaxValueAttributeTests
     public void GivenLongValue_ShouldPassValidation_WhenValueIsLessThanOrEqualToMax(long maxValue, long valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.True(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(49, 50)]
     [InlineData(49.0, long.MaxValue)]
@@ -67,10 +67,10 @@ public class MaxValueAttributeTests
     public void GivenLongValue_ShouldFailValidation_WhenValueIsMoreThanMax(long maxValue, long valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.False(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(50.0f, 49.0f)]
     [InlineData(float.MaxValue, 49.0f)]
@@ -79,10 +79,10 @@ public class MaxValueAttributeTests
     public void GivenFloatValue_ShouldPassValidation_WhenValueIsLessThanOrEqualToMax(float maxValue, float valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.True(maxValueAttribute.IsValid(valueBeingValidated));
     }
-    
+
     [Theory]
     [InlineData(49.0f, 50.0f)]
     [InlineData(49.0f, float.MaxValue)]
@@ -90,7 +90,7 @@ public class MaxValueAttributeTests
     public void GivenFloatValue_ShouldFailValidation_WhenValueIsMoreThanToMax(float maxValue, float valueBeingValidated)
     {
         var maxValueAttribute = new MaxValueAttribute(maxValue);
-         
+
         Assert.False(maxValueAttribute.IsValid(valueBeingValidated));
     }
 }

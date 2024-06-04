@@ -40,7 +40,7 @@ public sealed class ContainsNonEmptyGuidAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private class ValidData : IEnumerable<object?[]>
+    private sealed class ValidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
@@ -58,7 +58,7 @@ public sealed class ContainsNonEmptyGuidAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class InvalidData : IEnumerable<object?[]>
+    private sealed class InvalidData : IEnumerable<object?[]>
     {
         public IEnumerator<object?[]> GetEnumerator()
         {
@@ -74,7 +74,7 @@ public sealed class ContainsNonEmptyGuidAttributeTests
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 
-    private class SomeClass
+    private sealed class SomeClass
     {
         [ContainsNonEmptyGuid]
         public Guid?[] Values { get; set; } = Array.Empty<Guid?>();
