@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class GuidAttributeTests
+public sealed class GuidAttributeTests
 {
     private const string ACustomErrorMessage = "A custom error message.";
 
@@ -29,7 +29,6 @@ public class GuidAttributeTests
     [InlineData("{0xf4aebf09,0x7ac8,0x4521,{0x9b,0x0b,0x91,0x8d,0x81,0x39,0xbd,0xe0}}")]
     public void IsValid_Returns_True_When_Valid_Guid_String_Without_Format(string value)
     {
-        var format = default(string);
         var attr = new GuidAttribute();
         Assert.Null(attr.Format);
         Assert.True(attr.IsValid(value));
@@ -115,7 +114,7 @@ public class GuidAttributeTests
         Assert.Single(errorMessages, expectedValue5ErrorMessage);
     }
 
-    private class Something
+    private sealed class Something
     {
         [Guid]
         public string Value1 => "not_a_valid_guid_string";

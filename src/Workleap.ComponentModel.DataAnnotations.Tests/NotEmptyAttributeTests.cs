@@ -90,7 +90,7 @@ public sealed class NotEmptyAttributeTests
         Assert.Equal(expectedErrorMessage, result.ErrorMessage);
     }
 
-    private class Something
+    private sealed class Something
     {
         [NotEmpty]
         public string[] Values { get; } = Array.Empty<string>();

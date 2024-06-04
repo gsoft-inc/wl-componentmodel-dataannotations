@@ -1,6 +1,6 @@
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
-public class StartsWithAttributeTests
+public sealed class StartsWithAttributeTests
 {
     [Fact]
     public void IsValid_Returns_True_When_Value_Is_Null()

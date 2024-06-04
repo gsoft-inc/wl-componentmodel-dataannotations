@@ -67,13 +67,13 @@ public sealed class ValidatePropertiesAttribute : ValidationAttribute
     private static string FormatErrorMessage(string typeName, string fieldName, IReadOnlyCollection<ValidationResult> validationResults)
     {
         var sb = new StringBuilder();
-        
+
         sb.Append("The ");
         sb.Append(fieldName);
         sb.Append(" field of type ");
         sb.Append(typeName);
         sb.Append(" is invalid:");
-        
+
         if (validationResults.Count > 1)
         {
             sb.Append(Environment.NewLine);
@@ -98,7 +98,7 @@ public sealed class ValidatePropertiesAttribute : ValidationAttribute
 
                 sb.Append(memberSeparator);
                 sb.Append(memberName);
-                
+
                 memberSeparator = ", ";
             }
 
