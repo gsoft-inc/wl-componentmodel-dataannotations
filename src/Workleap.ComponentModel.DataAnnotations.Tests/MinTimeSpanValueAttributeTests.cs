@@ -1,5 +1,3 @@
-using System;
-
 namespace Workleap.ComponentModel.DataAnnotations.Tests;
 
 public class MinTimeSpanValueAttributeTests
