@@ -19,7 +19,7 @@ info:
   x-cortex-link:
     - name: Documentation
       type: documentation
-      url: https://dev.azure.com/gsoft/Shared-Assets/_git/WorkleapAdoptionTracker
+      url: https://gsoftdev.atlassian.net/wiki/spaces/TEC/pages/3454468115
     - type: cortex
       url: https://github.com/gsoft-inc/wl-componentmodel-dataannotations/blob/main/.cortex/catalog/service-wl-componentmodel-dataannotations.yaml
       name: Edit current Cortex entity in GitHub
