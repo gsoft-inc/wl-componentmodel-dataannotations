@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   ci:
+    # Use windows to easily support .NET Framework 4.6.2 targets
     runs-on: windows-latest
 
     steps:
