@@ -7,8 +7,6 @@ Begin {
 Process {
     function Exec([scriptblock]$Command) {
         & $Command
-        $exitCode = $LASTEXITCODE
-        Write-Output ("Command executed with exit code: {0}" -f $exitCode)
         if ($LASTEXITCODE -ne 0) {
             throw ("An error occurred while executing command: {0}" -f $Command)
         }
