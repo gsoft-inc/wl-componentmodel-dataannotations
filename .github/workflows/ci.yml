@@ -16,8 +16,7 @@ concurrency:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -29,11 +28,6 @@ jobs:
           source-url: ${{ secrets.NUGET_GSOFTDEV_FEED_URL }}
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GSOFT_NUGET_API_KEY }}
-
-      - name: Install Mono
-        run: |
-          sudo apt update
-          sudo apt install -y mono-complete          
 
       - run: ./Build.ps1
         shell: pwsh
