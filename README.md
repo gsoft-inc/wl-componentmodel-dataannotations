@@ -3,7 +3,7 @@
 Provides multiple new data annotation attributes, such as `[Guid]`, `[NotEmpty]`, `[ValidateProperties]`.
 
 [![nuget](https://img.shields.io/nuget/v/Workleap.ComponentModel.DataAnnotations.svg?logo=nuget)](https://www.nuget.org/packages/Workleap.ComponentModel.DataAnnotations/)
-[![build](https://img.shields.io/github/actions/workflow/status/gsoft-inc/wl-componentmodel-dataannotations/publish.yml?logo=github)](https://github.com/workleap/wl-componentmodel-dataannotations/actions/workflows/publish.yml)
+[![build](https://img.shields.io/github/actions/workflow/status/workleap/wl-componentmodel-dataannotations/publish.yml?logo=github)](https://github.com/workleap/wl-componentmodel-dataannotations/actions/workflows/publish.yml)
 
 
 ## Getting started
